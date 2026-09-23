@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Autobolidas – autoservisas Klaipėdoje (demonstracinis pavyzdys)</title>
+<style>
+:root{
+  --bg:#0b0c0e; --bg2:#121419; --steel1:#3a3f47; --steel2:#1c1f25; --line:#2a2e36;
+  --text:#e9ecf1; --muted:#9aa3b2; --accent:#ff6a1a; --accent2:#ffb347; --glow:rgba(255,106,26,.55);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* demo banner */
+.demo{background:repeating-linear-gradient(45deg,#1a1a1a 0 14px,#262626 14px 28px);border-bottom:2px solid var(--accent);
+  color:var(--accent2);text-align:center;font-size:14px;font-weight:600;letter-spacing:.04em;padding:8px 16px}
+
+/* HERO */
+.hero{position:relative;min-height:min(88vh,780px);display:flex;align-items:center;overflow:hidden;
+  background:radial-gradient(ellipse 80% 60% at 50% 0%,#23262d 0%,var(--bg) 70%);perspective:900px}
+.floor{position:absolute;left:-50%;right:-50%;bottom:-20%;height:70%;
+  background-image:linear-gradient(var(--glow) 1px,transparent 1px),linear-gradient(90deg,var(--glow) 1px,transparent 1px);
+  background-size:70px 70px;transform:rotateX(66deg);transform-origin:50% 100%;
+  mask-image:linear-gradient(to top,#000 10%,transparent 85%);-webkit-mask-image:linear-gradient(to top,#000 10%,transparent 85%);
+  animation:drive 3.5s linear infinite;opacity:1}
+@keyframes drive{to{background-position:0 70px}}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;align-items:center;padding-top:60px;padding-bottom:80px}
+.kicker{display:inline-block;color:var(--accent2);font-weight:700;letter-spacing:.3em;text-transform:uppercase;font-size:13px;
+  border:1px solid rgba(255,179,71,.35);padding:6px 12px;border-radius:999px;background:rgba(255,106,26,.08)}
+
+/* 3D steel nameplate */
+.plate-stage{perspective:1100px;margin:22px 0 18px;container-type:inline-size}
+.plate{position:relative;display:inline-block;max-width:100%;padding:22px 34px 24px;border-radius:14px;
+  background:linear-gradient(135deg,#5b626d 0%,#2b3038 38%,#6a717c 52%,#262a31 70%,#4a505a 100%);
+  border:1px solid #6d7580;
+  box-shadow:0 1px 0 #9aa3ae inset,0 -2px 0 #15171b inset,0 30px 60px rgba(0,0,0,.65),0 0 60px var(--glow);
+  transform:rotateX(14deg) rotateY(-16deg);transform-style:preserve-3d;animation:hover3d 7s ease-in-out infinite;overflow:hidden}
+@keyframes hover3d{0%,100%{transform:rotateX(14deg) rotateY(-16deg) translateY(0)}50%{transform:rotateX(8deg) rotateY(-6deg) translateY(-8px)}}
+.plate::after{content:"";position:absolute;top:-50%;left:-60%;width:40%;height:200%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);transform:rotate(18deg);animation:sheen 5s ease-in-out infinite}
+@keyframes sheen{0%,55%{left:-60%}85%,100%{left:130%}}
+.plate h1{font-size:clamp(26px,5vw,60px);font-size:clamp(26px,9.4cqi,80px);line-height:1;letter-spacing:.06em;font-weight:900;color:#f3f5f8;
+  text-shadow:0 1px 0 #c9ced6,0 2px 0 #aab1bb,0 3px 0 #8c949f,0 4px 0 #6f7783,0 5px 0 #545b66,0 12px 18px rgba(0,0,0,.6)}
+.plate .bolt{position:absolute;width:10px;height:10px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#d7dce3,#4a505a 70%);box-shadow:0 1px 2px #000}
+.b1{top:9px;left:9px}.b2{top:9px;right:9px}.b3{bottom:9px;left:9px}.b4{bottom:9px;right:9px}
+.lead{color:var(--muted);font-size:clamp(17px,2vw,20px);max-width:560px}
+.lead strong{color:var(--text)}
+
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:18px;border-radius:12px;padding:16px 26px;
+  transition:transform .12s ease,box-shadow .12s ease}
+.btn-call{color:#1a0d05;background:linear-gradient(180deg,#ff8a3d,#ff5e0f);
+  box-shadow:0 6px 0 #a33a07,0 14px 30px var(--glow),0 0 0 1px #ffb07a inset}
+.btn-call:hover{transform:translateY(-2px);box-shadow:0 8px 0 #a33a07,0 18px 40px var(--glow),0 0 0 1px #ffb07a inset}
+.btn-call:active{transform:translateY(5px);box-shadow:0 1px 0 #a33a07,0 6px 14px var(--glow)}
+.btn-ghost{color:var(--text);background:linear-gradient(180deg,#2a2e36,#1a1d23);border:1px solid #3b414b;box-shadow:0 5px 0 #0d0e11}
+.btn-ghost:active{transform:translateY(4px);box-shadow:0 1px 0 #0d0e11}
+.dot{width:10px;height:10px;border-radius:50%;background:#1a0d05;box-shadow:0 0 0 3px rgba(26,13,5,.25)}
+
+/* gauge-style hours card in hero */
+.panel{background:linear-gradient(160deg,var(--steel1),var(--steel2));border:1px solid #454b55;border-radius:18px;padding:26px;
+  box-shadow:0 1px 0 #6b727d inset,0 30px 60px rgba(0,0,0,.55);transform:perspective(900px) rotateY(10deg) rotateX(4deg)}
+.panel h2{font-size:15px;letter-spacing:.25em;text-transform:uppercase;color:var(--accent2);margin-bottom:14px}
+.row{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-bottom:1px dashed #4a505a}
+.row:last-of-type{border-bottom:0}
+.row .d{color:var(--muted);font-weight:600}
+.row .t{font-size:22px;font-weight:800;font-variant-numeric:tabular-nums}
+.row .t.soon{font-size:15px;color:var(--accent2);font-weight:700}
+.note{margin-top:12px;font-size:13px;color:var(--muted)}
+
+/* stat strip */
+.strip{background:linear-gradient(180deg,#15171c,#0e0f12);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.strip .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
+.stat{padding:26px 10px;text-align:center;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-size:30px;font-weight:900;background:linear-gradient(180deg,#fff,#9aa3b2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{color:var(--muted);font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+
+/* services */
+section{padding:90px 0}
+.sec-title{font-size:clamp(28px,4vw,44px);font-weight:900;letter-spacing:.02em;margin-bottom:10px}
+.sec-title em{font-style:normal;color:var(--accent)}
+.sec-sub{color:var(--muted);margin-bottom:40px;max-width:620px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;perspective:1200px}
+.card{position:relative;padding:28px 24px 26px;border-radius:16px;min-height:150px;
+  background:linear-gradient(145deg,#2c3139 0%,#1a1d23 60%,#23272e 100%);border:1px solid #3a404a;
+  box-shadow:0 1px 0 #59606b inset,0 18px 36px rgba(0,0,0,.55);
+  transform:rotateX(8deg) translateZ(0);transform-origin:50% 100%;transition:transform .25s ease,box-shadow .25s ease,border-color .25s}
+.card:hover{transform:rotateX(0deg) translateY(-10px) translateZ(30px);border-color:var(--accent);
+  box-shadow:0 1px 0 #59606b inset,0 30px 50px rgba(0,0,0,.6),0 0 40px var(--glow)}
+.card .num{position:absolute;top:18px;right:20px;font-weight:900;font-size:13px;color:#6d7580;letter-spacing:.1em}
+.card .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:16px;
+  background:linear-gradient(180deg,#ff8a3d,#d9480a);box-shadow:0 4px 0 #8a2f05,0 8px 18px var(--glow)}
+.card .ic svg{width:24px;height:24px;stroke:#1a0d05;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:20px;font-weight:800}
+
+/* booking */
+.book{background:radial-gradient(ellipse 70% 90% at 80% 50%,rgba(255,106,26,.14),transparent 60%),linear-gradient(180deg,#101216,#0b0c0e)}
+.book .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:center}
+.steps{list-style:none;counter-reset:s;margin:24px 0 30px}
+.steps li{counter-increment:s;display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;color:var(--muted);font-size:18px}
+.steps li::before{content:counter(s);flex:0 0 38px;height:38px;border-radius:10px;display:grid;place-items:center;font-weight:900;color:#1a0d05;
+  background:linear-gradient(180deg,#ffb347,#ff6a1a);box-shadow:0 4px 0 #8a2f05}
+.steps li b{color:var(--text)}
+.bigcall{display:block;text-align:center;text-decoration:none;border-radius:20px;padding:34px 20px;
+  background:linear-gradient(160deg,var(--steel1),var(--steel2));border:1px solid #4a505a;
+  box-shadow:0 1px 0 #6b727d inset,0 30px 60px rgba(0,0,0,.55);transform:perspective(900px) rotateY(-8deg)}
+.bigcall small{display:block;color:var(--accent2);letter-spacing:.25em;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+.bigcall strong{display:block;font-size:clamp(30px,4.2vw,46px);font-weight:900;letter-spacing:.02em;
+  text-shadow:0 2px 0 #6f7783,0 4px 0 #3d434c,0 10px 20px rgba(0,0,0,.6)}
+.bigcall span{display:inline-block;margin-top:18px;color:#1a0d05;font-weight:800;padding:12px 22px;border-radius:12px;
+  background:linear-gradient(180deg,#ff8a3d,#ff5e0f);box-shadow:0 5px 0 #a33a07,0 12px 26px var(--glow)}
+
+/* location */
+.loc .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px}
+.box{border-radius:18px;padding:30px;background:linear-gradient(160deg,#20242b,#15171c);border:1px solid #353b44;box-shadow:0 20px 44px rgba(0,0,0,.5)}
+.box h3{color:var(--accent2);font-size:14px;letter-spacing:.25em;text-transform:uppercase;margin-bottom:12px}
+.box p{font-size:22px;font-weight:800}
+.box .btn{margin-top:20px;font-size:16px;padding:13px 20px}
+
+footer{border-top:1px solid var(--line);padding:34px 0 60px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+/* sticky call on phones */
+.sticky{display:none}
+
+@media (max-width:900px){
+  .hero{min-height:auto}
+  .hero .wrap{grid-template-columns:minmax(0,1fr);gap:34px;padding-top:40px;padding-bottom:60px}
+  .panel{transform:none}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .book .wrap,.loc .wrap{grid-template-columns:minmax(0,1fr)}
+  .bigcall{transform:none}
+  section{padding:64px 0}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .kicker{letter-spacing:.18em;font-size:12px}
+  .plate{padding:16px 22px 18px;transform:rotateX(10deg) rotateY(-8deg);animation:none}
+  .grid{grid-template-columns:minmax(0,1fr);gap:16px}
+  .card{min-height:auto;transform:none;display:flex;align-items:center;gap:16px;padding:18px}
+  .card .ic{margin-bottom:0;flex:0 0 46px}
+  .card .num{top:50%;transform:translateY(-50%)}
+  .strip .wrap{grid-template-columns:minmax(0,1fr)}
+  .stat{border-right:0;border-bottom:1px solid var(--line);padding:18px}
+  .stat:last-child{border-bottom:0}
+  .btn{width:100%;justify-content:center}
+  .sticky{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:50;justify-content:center;text-decoration:none;
+    font-weight:900;font-size:18px;color:#1a0d05;padding:16px;border-radius:14px;background:linear-gradient(180deg,#ff8a3d,#ff5e0f);
+    box-shadow:0 5px 0 #a33a07,0 14px 30px rgba(0,0,0,.6)}
+  footer{padding-bottom:110px}
+}
+@media (prefers-reduced-motion:reduce){
+  .floor,.plate,.plate::after{animation:none}
+  .card,.btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<div class="demo">Demonstracinis pavyzdys – ne oficiali Autobolido svetainė</div>
+
+<header class="hero">
+  <div class="floor" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <span class="kicker">Autoservisas Klaipėdoje</span>
+      <div class="plate-stage">
+        <div class="plate">
+          <i class="bolt b1"></i><i class="bolt b2"></i><i class="bolt b3"></i><i class="bolt b4"></i>
+          <h1>AUTOBOLIDAS</h1>
+        </div>
+      </div>
+      <p class="lead">Variklis, važiuoklė, padangos, elektra ir diagnostika – <strong>vienoje vietoje, Dubysos g. 29A</strong>.</p>
+    </div>
+
+    <aside class="panel" aria-label="Darbo laikas">
+      <h2>Darbo laikas</h2>
+      <div class="row"><span class="d">I–V</span><span class="t">8:00–18:00</span></div>
+      <div class="row"><span class="d">VI</span><span class="t soon">tikslinama</span></div>
+      <div class="row"><span class="d">VII</span><span class="t">Nedirbame</span></div>
+      <p class="note">Šeštadienio laikas tikslinamas – prieš atvykdami paskambinkite.</p>
+    </aside>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="wrap">
+    <div class="stat"><b>Nuo 2017</b><span>Klaipėdoje</span></div>
+    <div class="stat"><b>9</b><span>paslaugų kryptys</span></div>
+    <div class="stat"><b>I–V 8–18</b><span>darbo dienomis</span></div>
+  </div>
+</div>
+
+<section id="paslaugos">
+  <div class="wrap">
+    <h2 class="sec-title">Mūsų <em>paslaugos</em></h2>
+    <p class="sec-sub">Nuo diagnostikos iki suvirinimo – paskambinkite ir aptarsime jūsų automobilio gedimą.</p>
+    <div class="grid">
+      <div class="card"><span class="num">01</span><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="14" height="9" rx="1"/><path d="M17 11h3v3h-3M7 8V5h6v3M1 11h2v3H1"/></svg></div><h3>Variklio remontas</h3></div>
+      <div class="card"><span class="num">02</span><div class="ic"><svg viewBox="0 0 24 24"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M9 17h6M6 14V8h12v6"/></svg></div><h3>Važiuoklės remontas</h3></div>
+      <div class="card"><span class="num">03</span><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v5M12 16v5M3 12h5M16 12h5"/></svg></div><h3>Padangos</h3></div>
+      <div class="card"><span class="num">04</span><div class="ic"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Elektra</h3></div>
+      <div class="card"><span class="num">05</span><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 12l3-3 3 2 4-4M8 20h8M12 16v4"/></svg></div><h3>Diagnostika</h3></div>
+      <div class="card"><span class="num">06</span><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7a5 5 0 0 1 5 5"/><circle cx="12" cy="12" r="2"/></svg></div><h3>Stabdžiai</h3></div>
+      <div class="card"><span class="num">07</span><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 20l7-7M13 11l2-2M14 4l6 6-3 3-6-6zM3 21l2-2"/></svg></div><h3>Suvirinimas</h3></div>
+      <div class="card"><span class="num">08</span><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2v20M4 6l16 12M20 6 4 18M9 3l3 3 3-3M9 21l3-3 3 3"/></svg></div><h3>Kondicionieriai</h3></div>
+      <div class="card"><span class="num">09</span><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z"/></svg></div><h3>Tepalų keitimas</h3></div>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="registracija">
+  <div class="wrap">
+    <div>
+      <h2 class="sec-title">Registracija <em>remontui</em></h2>
+      <ol class="steps">
+        <li><span><b>Paskambinkite</b> ir papasakokite, kas nutiko automobiliui.</span></li>
+        <li><span><b>Sutarkime laiką</b>, kada atvykti į servisą.</span></li>
+        <li><span><b>Atvažiuokite</b> į Dubysos g. 29A, Klaipėdoje.</span></li>
+      </ol>
+    </div>
+    <a class="bigcall" href="tel:+37062710166">
+      <small>Skambinkite darbo dienomis 8–18</small>
+      <strong>+370 627 10166</strong>
+      <span>Skambinti dabar</span>
+    </a>
+  </div>
+</section>
+
+<section class="loc" id="kontaktai">
+  <div class="wrap">
+    <div class="box">
+      <h3>Adresas</h3>
+      <p>Dubysos g. 29A, Klaipėda</p>
+      <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Dubysos+g.+29A%2C+Klaip%C4%97da">Atidaryti žemėlapyje</a>
+    </div>
+    <div class="box">
+      <h3>Telefonas</h3>
+      <p>+370 627 10166</p>
+      <a class="btn btn-call" href="tel:+37062710166"><span class="dot"></span>Skambinti</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Autobolidas, UAB · Dubysos g. 29A, Klaipėda · +370 627 10166</span>
+    <span>Demonstracinis pavyzdys. Informacija surinkta iš viešų katalogų.</span>
+  </div>
+</footer>
+
+<a class="sticky" href="tel:+37062710166">Skambinti +370 627 10166</a>
+
+</body>
+</html>
